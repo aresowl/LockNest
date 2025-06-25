@@ -11,7 +11,7 @@
 * **Full CRUD operations** on password entries
 * **Interactive password generator** with strength checker
 * **Login lockout system** for brute-force protection
-* **Rich-powered terminal UI** with styled menus & panels
+* **Rich-powered terminal UI** with styled menus & panels.
 * **Fully menu-driven interface**, no command-line arguments
 
 ---
