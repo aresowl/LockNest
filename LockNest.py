@@ -52,17 +52,19 @@ class UIManager:
         banner_text = Text(
             """
 db       .d88b.   .o88b. db   dD d8b   db d88888b .d8888. d888888b 
-88      .8P  Y8. d8P  Y8 88 ,8P' 888o  88 88'     88'  YP `~~88~~' 
-88      88    88 8P      88,8P   88V8o 88 88ooooo `8bo.      88    
-88      88    88 8b      88`8b   88 V8o88 88~~~~~   `Y8b.    88    
-88booo. `8b  d8' Y8b  d8 88 `88. 88  V888 88.     db   8D    88    
-Y88888P  `Y88P'   `Y88P' YP   YD VP   V8P Y88888P `8888Y'    YP    
+88      .8P  Y8. d8P  Y8 88 ,8P' 888o  88 88'      88'  YP `~~88~~' 
+88      88   88 8P       88,8P   88V8o 88 88ooooo  `8bo.      88   
+88      88   88 8b       88`8b   88 V8o88 88~~~~~    `Y8b.    88   
+88booo. `8b  d8' Y8b  d8 88 `88. 88  V888 88.      db  8D    88   
+Y88888P  `Y88P'   `Y88P' YP   YD VP   V8P Y88888P `8888Y'    YP   
                                                                    
                                                                    
  LockNest Your Secure Terminal Password Vault 🔐
             """, justify="center", style="bold cyan" # Changed banner text style
         )
         self.console.print(Panel(banner_text, border_style="blue", title_align="center", padding=(1, 2))) # Changed border style
+        # Add GitHub link right after the banner
+        self.console.print(Text("Developed by Aresowl: https://github.com/aresowl/", justify="center", style="dim white italic"))
         self.console.print("\n")
 
     def display_panel(self, title: str, content: str, style: str = "dim cyan"):
@@ -142,7 +144,7 @@ Y88888P  `Y88P'   `Y88P' YP   YD VP   V8P Y88888P `8888Y'    YP
                 entry.get("name", "N/A"),
                 entry.get("username", "N/A"),
                 "[dim]********[/]", # IMPORTANT: Passwords are masked for security reasons.
-                                    # Displaying them in plain text in a terminal is a significant security risk.
+                                         # Displaying them in plain text in a terminal is a significant security risk.
                 entry.get("notes", "N/A")
             )
         self.console.print(table)
@@ -248,7 +250,7 @@ class AuthManager:
     def register_user(self) -> bool:
         """Handles user registration."""
         self.ui.display_banner()
-        self.ui.display_info("📝 Register New User 📝")
+        self.ui.display_info("📝 Register New User �")
 
         username = self.ui.get_input("Enter new username").strip()
         if not username:
@@ -676,4 +678,4 @@ if __name__ == "__main__":
     except Exception as e:
         console.print(Panel(f"[bold red]An unexpected error occurred:[/]\n[red]{e}[/]", title="System Error", border_style="red"))
         console.print("[bold yellow]Application is closing...[/]")
-
+�
